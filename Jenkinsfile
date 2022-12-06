@@ -6,7 +6,7 @@ pipeline {
     }
        environment {
         
-        IMAGE_NAME="hazembensaid07/spring-project:${BUILD_NUMBER}"
+        IMAGE_NAME="hazem06/spring-project:${BUILD_NUMBER}"
         
     }
     stages {
