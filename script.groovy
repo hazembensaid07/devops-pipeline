@@ -18,12 +18,12 @@ def buildImage(String imageName) {
     //getting credentials of github from jenkins
     withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
         //building the image with dockerhub repo tag
-        sh "sudo docker build -t $imageName ."
+        sh " docker build -t $imageName ."
      
         //login to dockerhub
-        sh "echo $PASS | sudo docker login -u $USER --password-stdin"
+        sh "echo $PASS |  docker login -u $USER --password-stdin"
         //pushing the image to dockerhub
-        sh "sudo docker push $imageName"
+        sh " docker push $imageName"
     
     }
 } 
