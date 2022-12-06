@@ -11,6 +11,6 @@ def cloneCode() {
 } 
 def buildJar() {
     echo 'building the application...'
-    sh 'mvn -f pom.xml clean package'
+    sh 'cat pom.xml'
 } 
 return this
