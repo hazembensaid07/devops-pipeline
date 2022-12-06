@@ -1,7 +1,7 @@
 def cloneCode() {
    //cloning code 
-   git credentialsId: 'github' , url: 'https://github.com/hazembensaid07/spring-crud.git' , branch : 'master'
-   cat pom.xml
+   sh "git credentialsId: 'github' , url: 'https://github.com/hazembensaid07/spring-crud.git' , branch : 'master'"
+   sh "cat pom.xml"
 } 
 def buildJar() {
     echo 'building the application...'
