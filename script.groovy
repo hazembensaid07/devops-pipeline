@@ -16,7 +16,7 @@ def buildJar() {
 def buildImage(String imageName) {
     echo 'building the docker image...'
     //getting credentials of github from jenkins
-    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+    withCredentials([usernamePassword(credentialsId: 'cdbb9b3c-6bfa-4ac4-98f2-75002b127821', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
         //building the image with dockerhub repo tag
         sh "docker build -t $imageName ."
      
