@@ -31,7 +31,7 @@ pipeline {
                 }
             }
         }
-        stage("build jar") {
+         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
@@ -64,6 +64,7 @@ pipeline {
                         error "*** File: ${artifactPath}, could not be found";
                     }
                 }
+            }
         }
            stage("build image") {
             steps {
