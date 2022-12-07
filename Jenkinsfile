@@ -12,6 +12,9 @@ pipeline {
         NEXUS_URL = "http://13.38.62.189/:8081"
         NEXUS_REPOSITORY = "maven-nexus-repo"
         NEXUS_CREDENTIAL_ID = "nexus"
+        committerEmail = sh(returnStdout: true, script: 'git log --format="%ae" | head -1').trim()
+     
+        currentDate = sh(returnStdout: true, script: 'date +%Y-%m-%d-%H-%M').trim()
         
     }
     stages {
@@ -54,5 +57,16 @@ pipeline {
               }
            }
         }
-    }   
+    }
+     post {
+        
+       
+         success {  
+              emailext body: "${committerEmail} has pushed ${GIT_COMMIT} at ${currentDate} with success to CTmiddle production ", to: 'hazembensaid195@gmail.com' , subject: 'Production Start-up '
+         }  
+         failure {  
+            emailext body: "${committerEmail} has pushed ${GIT_COMMIT} at ${currentDate} with fail to CTmiddle production ", to: 'hazembensaid195@gmail.com', subject: 'Production Start-up'
+         }  
+        }
+      
 }
