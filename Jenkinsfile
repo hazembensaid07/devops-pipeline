@@ -41,7 +41,8 @@ pipeline {
             }
         }
         stage("deploy") {
-            script {
+           steps {
+             script {
                 def dockercmd="docker run -p 8083:8080 -d ${imageName}"
                 def dockerdeletecmd="docker rm ${docker ps -aq}"
                 sshagent(['ssh']) {
@@ -50,7 +51,8 @@ pipeline {
                   
 
                 }
-            }
+              }
+           }
         }
     }   
 }
