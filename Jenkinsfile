@@ -62,10 +62,10 @@ pipeline {
         
        
          success {  
-              emailext body: "${committerEmail} has pushed ${GIT_COMMIT} at ${currentDate} with success to CTmiddle production ", to: 'hazembensaid195@gmail.com' , subject: 'Production Start-up '
+              emailext body: "${committerEmail} has pushed ${GIT_COMMIT} at ${currentDate} with success ", to: 'hazembensaid195@gmail.com' , subject: 'Production Start-up '
          }  
          failure {  
-            emailext body: "${committerEmail} has pushed ${GIT_COMMIT} at ${currentDate} with fail to CTmiddle production ", to: 'hazembensaid195@gmail.com', subject: 'Production Start-up'
+            emailext body: "${committerEmail} has pushed ${GIT_COMMIT} at ${currentDate} with fail  ", to: 'hazembensaid195@gmail.com', subject: 'Production Start-up'
          }  
         }
       
