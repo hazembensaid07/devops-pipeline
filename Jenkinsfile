@@ -43,7 +43,7 @@ pipeline {
         stage("deploy") {
            steps {
              script {
-                def dockercmd="docker run --name spring -p 8083:8080 -d ${env.imageName}"
+                def dockercmd="docker run --name spring -p 8083:8080 -d ${env.IMAGE_NAME}"
                 //def dockerdeletecmd="docker stop  spring && docker rm spring"
                 sshagent(['ssh']) {
                     //sh "ssh -o StrictHostKeyChecking=no ubuntu@13.38.62.189 ${dockerdeletecmd}"
