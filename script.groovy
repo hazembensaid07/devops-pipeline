@@ -28,6 +28,6 @@ def buildImage(String imageName) {
     }
 } 
 def deploy (String imageName) {
-
+  
 }
 return this

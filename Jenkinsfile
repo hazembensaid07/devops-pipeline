@@ -43,7 +43,7 @@ pipeline {
         stage("deploy") {
             script {
                 def dockercmd="docker run -p 8083:8080 -d ${imageName}"
-                def dockerdeletecmd="docker rm $(docker ps -aq)"
+                def dockerdeletecmd="docker rm ${docker ps -aq}"
                 sshagent(['ssh']) {
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@13.38.62.189 ${dockerdeletecmd}"
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@13.38.62.189 ${dockercmd}"
