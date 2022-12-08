@@ -11,7 +11,7 @@ pipeline {
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "13.39.51.155:8081"
         NEXUS_REPOSITORY = "maven-nexus-repo"
-        t commit -m "nexus" = "nexus"
+        NEXUS_CREDENTIAL_ID = "nexus"
         committerEmail = sh(returnStdout: true, script: 'git log --format="%ae" | head -1').trim()
      
         currentDate = sh(returnStdout: true, script: 'date +%Y-%m-%d-%H-%M').trim()

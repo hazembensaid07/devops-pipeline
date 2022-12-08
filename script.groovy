@@ -21,7 +21,7 @@ def buildImage(String imageName) {
     
     }
 } 
-def runSonar (String imageName) {
+def runSonar () {
     sh 'mvn sonar:sonar \
                    -Dsonar.projectKey=devop \
                    -Dsonar.host.url=http://35.181.43.26:9000 \
