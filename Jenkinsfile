@@ -10,7 +10,7 @@ pipeline {
         NEXUS_VERSION = "nexus"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "13.39.51.155:8081"
-        NEXUS_REPOSITORY = "maven-nexus-repo"
+        NEXUS_REPOSITORY = "devops"
         NEXUS_CREDENTIAL_ID = "nexus"
         committerEmail = sh(returnStdout: true, script: 'git log --format="%ae" | head -1').trim()
      
