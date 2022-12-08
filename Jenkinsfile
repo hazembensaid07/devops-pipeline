@@ -7,7 +7,7 @@ pipeline {
        environment {
         
         IMAGE_NAME="hazem06/spring-project:${BUILD_NUMBER}"
-        NEXUS_VERSION = "nexus"
+        NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "13.39.51.155:8081"
         NEXUS_REPOSITORY = "devops"
