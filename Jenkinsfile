@@ -34,13 +34,13 @@ pipeline {
                 }
             }
         }
-       /* stage("sonar test") {
+       stage("sonar test") {
             steps {
                 script {
                    gv.runSonar()
                            }
             }
-        }*/
+        }
         stage("Publish to Nexus Repository") {
             steps {
                 script {
