@@ -7,6 +7,9 @@ def buildJar() {
     echo 'building the application...'
     sh 'cat pom.xml'
 } 
+def runUnitTest() {
+    echo "unit tests"
+}
 def buildImage(String imageName) {
     echo 'building the docker image...'
     //getting credentials of github from jenkins

@@ -9,7 +9,7 @@ pipeline {
         IMAGE_NAME="hazem06/spring-project:${BUILD_NUMBER}"
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "13.39.51.155:8081"
+        NEXUS_URL = "http://15.188.56.45:8081"
         NEXUS_REPOSITORY = "devops"
         NEXUS_CREDENTIAL_ID = "nexus"
         committerEmail = sh(returnStdout: true, script: 'git log --format="%ae" | head -1').trim()
@@ -32,6 +32,13 @@ pipeline {
                    
                  gv.cloneCode()
                 }
+            }
+        }
+        stage("run unit  test") {
+            steps {
+                script {
+                   gv.runUnitTest()
+                           }
             }
         }
        stage("sonar test") {
@@ -91,8 +98,8 @@ pipeline {
                 def dockercmd="docker run --name spring -p 8083:8080 -d ${env.IMAGE_NAME}"
                 def dockerdeletecmd="docker stop  spring && docker rm spring"
                 sshagent(['ssh']) {
-                   sh "ssh -o StrictHostKeyChecking=no ubuntu@13.38.62.189 ${dockerdeletecmd}"
-                    sh "ssh -o StrictHostKeyChecking=no ubuntu@13.38.62.189 ${dockercmd}"
+                   sh "ssh -o StrictHostKeyChecking=no ubuntu@13.39.80.236 ${dockerdeletecmd}"
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@13.39.80.236 ${dockercmd}"
                   
 
                 }
