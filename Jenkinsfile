@@ -9,7 +9,7 @@ pipeline {
         IMAGE_NAME="hazem06/spring-project:${BUILD_NUMBER}"
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://15.188.56.45:8081"
+        NEXUS_URL = "http://15.188.56.45:8081/"
         NEXUS_REPOSITORY = "devops"
         NEXUS_CREDENTIAL_ID = "nexus"
         committerEmail = sh(returnStdout: true, script: 'git log --format="%ae" | head -1').trim()
